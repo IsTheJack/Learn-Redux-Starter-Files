@@ -1,6 +1,5 @@
 import { createStore, compose } from 'redux';
-import { syncHistoryWithStore } from 'react-store-redux';
-
+import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 
 // Import the root reducer
