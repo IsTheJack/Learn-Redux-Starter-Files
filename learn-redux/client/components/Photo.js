@@ -19,24 +19,15 @@ export default class Photo extends Component {
                         <img src={display_src} alt={caption} className="grid-photo"/>
                     </Link>
 
-                    <CSSTransitionGroup
-                        transitionName="like"
-                        transitionEnterTimeout={500}
-                        transitionLeaveTimeout={500}
-                    >
-                        <span
-                            key={likes}
-                            className="likes-hearth"
-                        >
-                            {likes}
-                        </span>
+                    <CSSTransitionGroup transitionName="like" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+                        <span key={likes} className="likes-heart">{likes}</span>
                     </CSSTransitionGroup>
                 </div>
 
                 <figcaption>
                     <p>{caption}</p>
                     <div className="control-buttons">
-                        <button className="likes">&hearts; {likes}</button>
+                        <button onClick={this.props.increment.bind(null, this.props.i)} className="likes">&hearts; {likes}</button>
 
                         <Link className="button" to={`/view/${code}`} >
                             <span className="comment-count">
